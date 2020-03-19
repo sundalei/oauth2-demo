@@ -44,10 +44,9 @@ def oauth2_callback(service):
 	}
 	r = requests.post(access_token_url, json=payload, headers={'Accept': 'application/json'})
 	access_token = json.loads(r.text).get('access_token')
-	print(r.text)
-	print(access_token)
 
-	access_user_url = 'https://api.unsplash.com/me'
+	# access_user_url = 'https://api.unsplash.com/me'
+	access_user_url = 'https://api.unsplash.com/users/linaverovaya'
 	r = requests.get(access_user_url, headers={'Authorization': 'Bearer ' + access_token})
 	return jsonify({
 		'status': 'success',
