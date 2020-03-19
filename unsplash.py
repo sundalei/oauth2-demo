@@ -46,11 +46,18 @@ def oauth2_callback(service):
 	access_token = json.loads(r.text).get('access_token')
 
 	# access_user_url = 'https://api.unsplash.com/me'
-	access_user_url = 'https://api.unsplash.com/users/linaverovaya'
+	# access_user_url = 'https://api.unsplash.com/users/linaverovaya/photos'
+	# access_user_url = 'https://api.unsplash.com/users/linaverovaya/likes'
+	# access_user_url = 'https://api.unsplash.com/users/linaverovaya/collections'
+	access_user_url = 'https://api.unsplash.com/photos'
 	r = requests.get(access_user_url, headers={'Authorization': 'Bearer ' + access_token})
+	# print(json.loads(r.text)[0]['urls']['regular'])
+	urls = []
+	for url in json.loads(r.text):
+		urls.append(url['urls']['regular'])
 	return jsonify({
 		'status': 'success',
-		'data': json.loads(r.text)
+		'data': urls
 	})
 
 
