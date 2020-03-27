@@ -1,0 +1,14 @@
+{
+    "supported": {
+      "unsplash": {
+          "auth": {
+              "auth_url": "https://unsplash.com/oauth/authorize",
+              "client_id": "ee30dc2b9d62ada98d08a69460e89785479f5b7abf33e275df16fbbe93188d75",
+              "client_secret": "53b390ec95b33b9dc7f49e12985353c650c10cb84ac5e1c0065f7780f919918c",
+              "scope": "public",
+              "redirect_uri": "http://127.0.0.1:5000/oauth2/splash/callback",
+              "access_token_url": "https://unsplash.com/oauth/token"
+          }
+      }
+    }
+  }
