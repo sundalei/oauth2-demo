@@ -64,9 +64,6 @@ def oauth2_callback(service):
 		access_token = body['access_token']
 		refresh_token = body['refresh_token']
 		
-		access_user_url = 'https://api.unsplash.com/photos'
-		result = requests.get(access_user_url, headers={'Authorization': 'Bearer ' + access_token})
-		
 		params = {
 			'access_token': access_token,
 			'refresh_token': refresh_token,
